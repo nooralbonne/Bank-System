@@ -361,21 +361,6 @@ public:
 	}
 
 	//++++++++
-	static stTrnsferLogRecord _ConvertTransferLogLineToRecord(string Line, string Seperator = "#//#"){
-		stTrnsferLogRecord TrnsferLogRecord;
-
-		vector <string> vTrnsferLogRecordLine = clsString::Split(Line, Seperator);
-		TrnsferLogRecord.DateTime = vTrnsferLogRecordLine[0];
-		TrnsferLogRecord.SourceAccountNumber = vTrnsferLogRecordLine[1];
-		TrnsferLogRecord.DestinationAccountNumber = vTrnsferLogRecordLine[2];
-		TrnsferLogRecord.Amount = stod(vTrnsferLogRecordLine[3]);
-		TrnsferLogRecord.srcBalanceAfter = stod(vTrnsferLogRecordLine[4]);
-		TrnsferLogRecord.destBalanceAfter = stod(vTrnsferLogRecordLine[5]);
-		TrnsferLogRecord.UserName = vTrnsferLogRecordLine[6];
-
-		return TrnsferLogRecord;
-
-	}
 	static  vector <stTrnsferLogRecord> GetTransfersLogList() {
 		vector <stTrnsferLogRecord> vTransferLogRecord;
 
